@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-09T09:07:10.754Z",
+  "title": "Design System: Spending",
+  "extensions": {
+    "colorMeta": {
+      "system-grouped-bg": {
+        "role": "neutral",
+        "displayName": "Grouped Background",
+        "canonical": "#F2F2F7",
+        "dark": "#000000",
+        "tonalRamp": [
+          "#49494A",
+          "#79797C",
+          "#A9A9AD",
+          "#D5D5D9",
+          "#F2F2F7",
+          "#F6F6F9",
+          "#FAFAFC",
+          "#FDFDFE"
+        ]
+      },
+      "group-surface": {
+        "role": "neutral",
+        "displayName": "Group Surface",
+        "canonical": "#FFFFFF",
+        "dark": "#1C1C1E"
+      },
+      "sheet-bg": {
+        "role": "neutral",
+        "displayName": "Sheet Ground",
+        "canonical": "#F2F2F7",
+        "dark": "#1C1C1E",
+        "tonalRamp": [
+          "#49494A",
+          "#79797C",
+          "#A9A9AD",
+          "#D5D5D9",
+          "#F2F2F7",
+          "#F6F6F9",
+          "#FAFAFC",
+          "#FDFDFE"
+        ]
+      },
+      "sheet-group": {
+        "role": "neutral",
+        "displayName": "Sheet Group",
+        "canonical": "#FFFFFF",
+        "dark": "#2C2C2E"
+      },
+      "label": {
+        "role": "neutral",
+        "displayName": "Label",
+        "canonical": "#000000",
+        "dark": "#FFFFFF"
+      },
+      "label-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Label",
+        "canonical": "#6C6C70",
+        "dark": "#AEAEB2",
+        "tonalRamp": [
+          "#202022",
+          "#363638",
+          "#4C4C4E",
+          "#5F5F63",
+          "#6C6C70",
+          "#98989B",
+          "#C4C4C6",
+          "#E9E9EA"
+        ]
+      },
+      "label-tertiary": {
+        "role": "neutral",
+        "displayName": "Tertiary Label",
+        "canonical": "#8E8E93",
+        "dark": "#8E8E93",
+        "tonalRamp": [
+          "#2B2B2C",
+          "#47474A",
+          "#636367",
+          "#7D7D81",
+          "#8E8E93",
+          "#B0B0B3",
+          "#D2D2D4",
+          "#EEEEEF"
+        ]
+      },
+      "separator": {
+        "role": "neutral",
+        "displayName": "Separator",
+        "canonical": "rgba(60, 60, 67, 0.22)",
+        "dark": "rgba(84, 84, 88, 0.6)"
+      },
+      "fill": {
+        "role": "neutral",
+        "displayName": "Fill",
+        "canonical": "rgba(118, 118, 128, 0.12)",
+        "dark": "rgba(118, 118, 128, 0.24)"
+      },
+      "fill-strong": {
+        "role": "neutral",
+        "displayName": "Fill Strong",
+        "canonical": "rgba(118, 118, 128, 0.2)",
+        "dark": "rgba(118, 118, 128, 0.32)"
+      },
+      "segment-on": {
+        "role": "neutral",
+        "displayName": "Segment Thumb",
+        "canonical": "#FFFFFF",
+        "dark": "#636366"
+      },
+      "bar-material": {
+        "role": "neutral",
+        "displayName": "Bar Material",
+        "canonical": "rgba(249, 249, 249, 0.86)",
+        "dark": "rgba(22, 22, 24, 0.82)"
+      },
+      "tint": {
+        "role": "primary",
+        "displayName": "System Blue",
+        "canonical": "#007AFF",
+        "dark": "#0A84FF",
+        "tonalRamp": [
+          "#00254D",
+          "#003D80",
+          "#0055B3",
+          "#006BE0",
+          "#007AFF",
+          "#4DA2FF",
+          "#99CAFF",
+          "#D9EBFF"
+        ]
+      },
+      "tint-press": {
+        "role": "primary",
+        "displayName": "Pressed Blue",
+        "canonical": "#0062CC",
+        "dark": "#409CFF",
+        "tonalRamp": [
+          "#001D3D",
+          "#003166",
+          "#00458F",
+          "#0056B4",
+          "#0062CC",
+          "#4D91DB",
+          "#99C0EB",
+          "#D9E7F7"
+        ]
+      },
+      "on-tint": {
+        "role": "primary",
+        "displayName": "On Tint",
+        "canonical": "#FFFFFF",
+        "dark": "#FFFFFF"
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Budget Amber",
+        "canonical": "#FF9500",
+        "dark": "#FF9F0A",
+        "tonalRamp": [
+          "#4D2D00",
+          "#804B00",
+          "#B36800",
+          "#E08300",
+          "#FF9500",
+          "#FFB54D",
+          "#FFD599",
+          "#FFEFD9"
+        ]
+      },
+      "amber-text": {
+        "role": "secondary",
+        "displayName": "Budget Amber Text",
+        "canonical": "#A84B00",
+        "dark": "#FFB340",
+        "tonalRamp": [
+          "#321700",
+          "#542600",
+          "#763500",
+          "#944200",
+          "#A84B00",
+          "#C2814D",
+          "#DCB799",
+          "#F2E4D9"
+        ]
+      },
+      "amber-bg": {
+        "role": "secondary",
+        "displayName": "Budget Amber Wash",
+        "canonical": "rgba(255, 149, 0, 0.14)",
+        "dark": "rgba(255, 159, 10, 0.18)"
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "Over-Budget Red",
+        "canonical": "#FF3B30",
+        "dark": "#FF453A",
+        "tonalRamp": [
+          "#4D120E",
+          "#801E18",
+          "#B32922",
+          "#E0342A",
+          "#FF3B30",
+          "#FF766E",
+          "#FFB1AC",
+          "#FFE2E0"
+        ]
+      },
+      "red-text": {
+        "role": "secondary",
+        "displayName": "Over-Budget and Destructive Red Text",
+        "canonical": "#D70015",
+        "dark": "#FF6961",
+        "tonalRamp": [
+          "#410006",
+          "#6C000B",
+          "#97000F",
+          "#BD0012",
+          "#D70015",
+          "#E34D5B",
+          "#EF99A1",
+          "#F9D9DC"
+        ]
+      },
+      "red-bg": {
+        "role": "secondary",
+        "displayName": "Over-Budget Red Wash",
+        "canonical": "rgba(255, 59, 48, 0.12)",
+        "dark": "rgba(255, 69, 58, 0.18)"
+      },
+      "cat-green": {
+        "role": "tertiary",
+        "displayName": "Food & Drinks Green",
+        "canonical": "#34C759",
+        "dark": "#30D158",
+        "tonalRamp": [
+          "#103C1B",
+          "#1A642D",
+          "#248B3E",
+          "#2EAF4E",
+          "#34C759",
+          "#71D88B",
+          "#AEE9BD",
+          "#E1F7E6"
+        ]
+      },
+      "cat-cyan": {
+        "role": "tertiary",
+        "displayName": "Water Cyan",
+        "canonical": "#32ADE6",
+        "dark": "#64D2FF",
+        "tonalRamp": [
+          "#0F3445",
+          "#195773",
+          "#2379A1",
+          "#2C98CA",
+          "#32ADE6",
+          "#70C6EE",
+          "#ADDEF5",
+          "#E0F3FB"
+        ]
+      },
+      "cat-indigo": {
+        "role": "tertiary",
+        "displayName": "Computer Indigo",
+        "canonical": "#5856D6",
+        "dark": "#5E5CE6",
+        "tonalRamp": [
+          "#1A1A40",
+          "#2C2B6B",
+          "#3E3C96",
+          "#4D4CBC",
+          "#5856D6",
+          "#8A89E2",
+          "#BCBBEF",
+          "#E6E6F9"
+        ]
+      },
+      "cat-purple": {
+        "role": "tertiary",
+        "displayName": "Clothes Purple",
+        "canonical": "#AF52DE",
+        "dark": "#BF5AF2",
+        "tonalRamp": [
+          "#351943",
+          "#58296F",
+          "#7B399B",
+          "#9A48C3",
+          "#AF52DE",
+          "#C786E8",
+          "#DFBAF2",
+          "#F3E5FA"
+        ]
+      },
+      "cat-brown": {
+        "role": "tertiary",
+        "displayName": "Bills Brown",
+        "canonical": "#A2845E",
+        "dark": "#AC8E68",
+        "tonalRamp": [
+          "#31281C",
+          "#51422F",
+          "#715C42",
+          "#8F7453",
+          "#A2845E",
+          "#BEA98E",
+          "#DACEBF",
+          "#F1EDE7"
+        ]
+      },
+      "cat-blue": {
+        "role": "tertiary",
+        "displayName": "Transportation Blue",
+        "canonical": "#007AFF",
+        "dark": "#0A84FF",
+        "tonalRamp": [
+          "#00254D",
+          "#003D80",
+          "#0055B3",
+          "#006BE0",
+          "#007AFF",
+          "#4DA2FF",
+          "#99CAFF",
+          "#D9EBFF"
+        ]
+      },
+      "cat-pink": {
+        "role": "tertiary",
+        "displayName": "Gifts Pink",
+        "canonical": "#FF2D55",
+        "dark": "#FF375F",
+        "tonalRamp": [
+          "#4D0E1A",
+          "#80172B",
+          "#B3203C",
+          "#E0284B",
+          "#FF2D55",
+          "#FF6C88",
+          "#FFABBB",
+          "#FFE0E6"
+        ]
+      },
+      "cat-gray": {
+        "role": "tertiary",
+        "displayName": "Others Gray",
+        "canonical": "#8E8E93",
+        "dark": "#98989D",
+        "tonalRamp": [
+          "#2B2B2C",
+          "#47474A",
+          "#636367",
+          "#7D7D81",
+          "#8E8E93",
+          "#B0B0B3",
+          "#D2D2D4",
+          "#EEEEEF"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "hero-amount": {
+        "displayName": "Hero Amount",
+        "purpose": "Amount being entered in the Add payment sheet."
+      },
+      "display-total": {
+        "displayName": "Display Total",
+        "purpose": "Month total on the main screen; currency prefix at 0.5em in secondary label."
+      },
+      "large-title": {
+        "displayName": "Large Title",
+        "purpose": "iOS large title on top-level screens; collapses into the navbar title on scroll."
+      },
+      "title-2": {
+        "displayName": "Title 2",
+        "purpose": "History month switcher."
+      },
+      "title-3": {
+        "displayName": "Title 3",
+        "purpose": "Large section header, sort-mode merchant, empty-state heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Navbar and sheet titles, chart title, primary button."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Row titles, inputs, plain buttons. Root is -apple-system-body (17px fallback)."
+      },
+      "subheadline": {
+        "displayName": "Subheadline",
+        "purpose": "Row subtitles, of-budget values, chips, hints."
+      },
+      "footnote": {
+        "displayName": "Footnote",
+        "purpose": "Uppercase grouped-list section headers, footers, segmented labels, legend."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Chart axis labels and the Edited tag; picker labels at 0.706rem."
+      },
+      "keypad-digit": {
+        "displayName": "Keypad Digit",
+        "purpose": "Custom keypad keys."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Shortcut endpoint and key display in Settings only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-lift",
+        "value": "0 -2px 24px rgba(0, 0, 0, 0.12)",
+        "purpose": "Presented sheet over the scaled stage."
+      },
+      {
+        "name": "segment-thumb",
+        "value": "0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04)",
+        "purpose": "Selected segment in a segmented control."
+      },
+      {
+        "name": "toast-float",
+        "value": "0 8px 24px rgba(0, 0, 0, 0.18)",
+        "purpose": "Floating toast."
+      },
+      {
+        "name": "bar-hairline",
+        "value": "0 0.5px 0 var(--sep)",
+        "purpose": "Scrolled navbar bottom edge; the toolbar uses 0 -0.5px 0."
+      },
+      {
+        "name": "disc-selected-ring",
+        "value": "0 0 0 2.5px var(--sheet), 0 0 0 5px var(--tile)",
+        "purpose": "Chosen category disc."
+      },
+      {
+        "name": "chart-dot-ring",
+        "value": "0 0 0 2.5px var(--group)",
+        "purpose": "Today dot on the pace chart."
+      },
+      {
+        "name": "bar-material-blur",
+        "value": "backdrop-filter: saturate(180%) blur(20px)",
+        "purpose": "Scrolled navbar and bottom toolbar over bar-material; the action sheet uses blur(30px), the toast blur(20px)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-ios-sheet",
+        "value": "cubic-bezier(0.32, 0.72, 0, 1)",
+        "purpose": "Every spatial move: sheets, stage, screens, action sheet, toast, meters, disc press."
+      },
+      {
+        "name": "sheet",
+        "value": "0.5s",
+        "purpose": "Sheet rise; stage scales to 0.93 with 12px radius and brightness 0.9; scrim fades to 20% black."
+      },
+      {
+        "name": "screen-push",
+        "value": "0.42s",
+        "purpose": "Horizontal push and pop; outgoing screen offset -28%."
+      },
+      {
+        "name": "action-sheet",
+        "value": "0.4s",
+        "purpose": "Action sheet rise and toast slide."
+      },
+      {
+        "name": "meter-fill",
+        "value": "0.6s",
+        "purpose": "Meter width changes."
+      },
+      {
+        "name": "press",
+        "value": "0.12s-0.2s",
+        "purpose": "Key, button and disc press feedback (scale 0.98 or 0.92, opacity 0.4)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01s",
+        "purpose": "prefers-reduced-motion: transitions collapse, the stage does not scale, the caret stops blinking."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "640px",
+        "purpose": "Centre content, toolbar and navbar in a 600px column."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one prominent action: a full-width tint button in the bottom toolbar or a sheet.",
+      "html": "<button class=\"ds-btn-primary\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg>Add Payment</button>",
+      "css": ".ds-btn-primary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:50px;padding:0 20px;border:0;border-radius:12px;background:var(--tint,#007AFF);color:#fff;font:600 17px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;cursor:pointer;transition:transform .15s cubic-bezier(0.32, 0.72, 0, 1),background .15s}.ds-btn-primary:active{background:var(--tint-press,#0062CC);transform:scale(.98)}.ds-btn-primary:focus-visible{outline:2px solid var(--tint,#007AFF);outline-offset:2px}.ds-btn-primary:disabled{background:rgba(118,118,128,.2);color:#8E8E93;transform:none}"
+    },
+    {
+      "name": "Bar Button",
+      "kind": "nav",
+      "refersTo": "bar-button",
+      "description": "Navbar text and icon button in tint, 44px minimum target.",
+      "html": "<button class=\"ds-bar-btn\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/><path d=\"M12 7v5l4 2\"/></svg>History</button>",
+      "css": ".ds-bar-btn{display:inline-flex;align-items:center;gap:4px;min-height:44px;min-width:44px;padding:0 8px;border:0;background:none;border-radius:10px;color:var(--tint,#007AFF);font:400 17px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;cursor:pointer}.ds-bar-btn:active{opacity:.4}.ds-bar-btn:focus-visible{outline:2px solid var(--tint,#007AFF);outline-offset:2px}"
+    },
+    {
+      "name": "Grouped Rows with Tiles and Meters",
+      "kind": "card",
+      "refersTo": "list-row",
+      "description": "Inset group of category rows: 29px tile, title, tabular value, budget meter; over budget shows the hatched excess.",
+      "html": "<ul class=\"ds-group\"><li class=\"ds-row\"><span class=\"ds-tile\" style=\"background:#34C759\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2\"/><path d=\"M7 2v20\"/><path d=\"M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7\"/></svg></span><span class=\"ds-main\"><span class=\"ds-line\"><span>Food &amp; Drinks</span><span class=\"ds-val ds-over\">3,842 <small>/ 3,500</small></span></span><span class=\"ds-meter ds-meter-over\"><span style=\"width:90%\"></span><span class=\"ds-excess\"></span></span></span></li><li class=\"ds-row\"><span class=\"ds-tile\" style=\"background:#32ADE6\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\"/></svg></span><span class=\"ds-main\"><span class=\"ds-line\"><span>Water</span><span class=\"ds-val\">140 <small>/ 300</small></span></span><span class=\"ds-meter\"><span style=\"width:47%;background:#32ADE6\"></span></span></span></li></ul>",
+      "css": ".ds-group{list-style:none;margin:0;padding:0;background:var(--group,#fff);border-radius:12px;overflow:hidden;font:400 17px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;color:var(--label,#000)}.ds-row{position:relative;display:flex;align-items:center;gap:12px;min-height:44px;padding:10px 16px}.ds-row+.ds-row::before{content:\"\";position:absolute;top:0;right:0;left:57px;border-top:.5px solid rgba(60,60,67,.22)}.ds-tile{width:29px;height:29px;border-radius:7px;display:grid;place-items:center;flex:none}.ds-main{flex:1;display:flex;flex-direction:column;gap:6px}.ds-line{display:flex;justify-content:space-between;align-items:baseline}.ds-val{font-variant-numeric:tabular-nums}.ds-val small{color:#6C6C70;font-size:.882em;font-weight:400}.ds-over{color:#D70015;font-weight:600}.ds-meter{height:4px;border-radius:2px;background:rgba(118,118,128,.12);overflow:hidden;display:block}.ds-meter>span{display:block;height:100%;border-radius:2px}.ds-meter-over{display:flex;gap:2px;overflow:visible;background:none}.ds-meter-over>span:first-child{background:#FF3B30;flex:none}.ds-excess{flex:1;min-width:8px;background:repeating-linear-gradient(-45deg,#FF3B30 0 3px,rgba(255,59,48,.3) 3px 6px)}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "input",
+      "refersTo": "segmented-control",
+      "description": "Payment method picker: a fill well with a raised selected thumb.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><button role=\"radio\" aria-checked=\"true\">Cash</button><button role=\"radio\" aria-checked=\"false\">Card</button><button role=\"radio\" aria-checked=\"false\">Apple Pay</button></div>",
+      "css": ".ds-seg{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;background:rgba(118,118,128,.12);border-radius:9px;padding:2px;font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif}.ds-seg button{min-height:30px;padding:0 10px;border:0;background:none;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;color:inherit;white-space:nowrap}.ds-seg button[aria-checked=\"true\"]{background:var(--seg-on,#fff);font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04)}.ds-seg button:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "History category filter; the selected chip inverts to label fill.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All <span class=\"ds-count\">24</span></button><button class=\"ds-chip\" aria-pressed=\"false\"><i class=\"ds-sw\" style=\"background:#34C759\"></i>Food <span class=\"ds-count\">9</span></button></div>",
+      "css": ".ds-chips{display:flex;gap:8px;padding:12px;background:#F2F2F7}.ds-chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 14px;border:0;border-radius:17px;background:#fff;color:#000;font:500 15px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;cursor:pointer}.ds-chip[aria-pressed=\"true\"]{background:#000;color:#F2F2F7}.ds-sw{width:8px;height:8px;border-radius:50%}.ds-count{color:#6C6C70;font-variant-numeric:tabular-nums}.ds-chip[aria-pressed=\"true\"] .ds-count{color:inherit;opacity:.7}.ds-chip:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    },
+    {
+      "name": "Category Disc Picker",
+      "kind": "custom",
+      "refersTo": "category-disc",
+      "description": "Category choice in the Add payment sheet; the chosen disc gets a double ring and the rest fade.",
+      "html": "<div class=\"ds-cats\"><button class=\"ds-cat\" aria-checked=\"true\"><span class=\"ds-disc\" style=\"--t:#34C759\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2\"/><path d=\"M7 2v20\"/><path d=\"M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7\"/></svg></span>Food</button><button class=\"ds-cat\" aria-checked=\"false\"><span class=\"ds-disc\" style=\"--t:#5856D6\"><svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16\"/></svg></span>Computer</button></div>",
+      "css": ".ds-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 4px;padding:12px;background:#F2F2F7;font-family:-apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif}.ds-cat{display:flex;flex-direction:column;align-items:center;gap:5px;padding:6px 0 4px;border:0;background:none;border-radius:12px;font-size:12px;color:#000;cursor:pointer}.ds-disc{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--t);transition:transform .2s cubic-bezier(0.32, 0.72, 0, 1),box-shadow .2s cubic-bezier(0.32, 0.72, 0, 1),opacity .2s}.ds-cat:active .ds-disc{transform:scale(.92)}.ds-cat[aria-checked=\"false\"] .ds-disc{opacity:.45}.ds-cat[aria-checked=\"true\"]{font-weight:600}.ds-cat[aria-checked=\"true\"] .ds-disc{box-shadow:0 0 0 2.5px #F2F2F7,0 0 0 5px var(--t)}.ds-cat:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    },
+    {
+      "name": "Keypad",
+      "kind": "custom",
+      "refersTo": "keypad-key",
+      "description": "Custom amount keypad that replaces the system keyboard.",
+      "html": "<div class=\"ds-keypad\"><button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><button>.</button><button>0</button><button aria-label=\"Delete\"><svg viewBox=\"0 0 24 24\" width=\"26\" height=\"26\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z\"/><path d=\"m12 9 6 6\"/><path d=\"m18 9-6 6\"/></svg></button></div>",
+      "css": ".ds-keypad{display:grid;grid-template-columns:repeat(3,1fr);max-width:360px;background:#F2F2F7}.ds-keypad button{min-height:50px;border:0;background:none;border-radius:12px;font:400 28px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;font-variant-numeric:tabular-nums;display:grid;place-items:center;color:#000;cursor:pointer;transition:background .12s}.ds-keypad button:active{background:rgba(118,118,128,.2)}.ds-keypad button:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    },
+    {
+      "name": "Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Undo toast after filing a payment.",
+      "html": "<div class=\"ds-toast\">Filed under Food <button>Undo</button></div>",
+      "css": ".ds-toast{display:inline-flex;align-items:center;gap:14px;padding:10px 10px 10px 18px;border-radius:26px;background:rgba(30,30,32,.94);color:#fff;backdrop-filter:blur(20px);font:500 15px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.18)}.ds-toast button{border:0;background:none;color:#64D2FF;font:600 15px -apple-system, BlinkMacSystemFont, \"SF Pro Text\", system-ui, sans-serif;min-height:36px;padding:0 10px;border-radius:18px;cursor:pointer}.ds-toast button:active{background:rgba(255,255,255,.12)}.ds-toast button:focus-visible{outline:2px solid #64D2FF;outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A First-Party iOS App",
+    "overview": "Spending is meant to look like an app Apple ships, with no visual identity of its own. The owner chose standard iOS over a custom world, so the platform's conventions are the brand. It uses the system grouped background, inset rounded groups, the system font through Dynamic Type, system blue as the one tint, and system-palette colours for the eight categories. Things that would usually make an app distinctive, like an expressive typeface, an own palette, or decorative depth, are left out on purpose. The only additions are a bold Revolut-style total, a Health-style pace chart, and a hatched overshoot on budget meters.\n\nThe screens are dense but calm. Each screen leads with an iOS large title. Content sits in inset grouped lists with hairline separators. One prominent tint button is anchored in a translucent bottom toolbar, within thumb reach. Colour carries information. Category colour says which category a row is. Amber and red say how a budget is doing. Tint marks what you can tap. Light and dark modes follow the system and both are fully specified. Motion uses the iOS sheet curve.",
+    "keyCharacteristics": [
+      "System grouped background with white (light) or #1C1C1E (dark) inset groups at a 12px radius.",
+      "System font via `-apple-system-body`. Every size is in rem, so the whole scale follows Dynamic Type.",
+      "Tabular numerals on every amount, axis label, count and keypad digit.",
+      "Category identity is a white glyph on a coloured 29px rounded tile in lists, and on a coloured disc in pickers.",
+      "Amber and red are the budget-state colours. Red also serves the iOS destructive role.",
+      "Translucent bar material only on the navbar once scrolled, the bottom toolbar, and the action sheet."
+    ],
+    "rules": [
+      {
+        "name": "The Reserved Status Rule",
+        "body": "Amber and red communicate budget state: near (≥80%) and over. Red also keeps its iOS meaning of destructive or error. Neither is ever used as a category colour, decoration or emphasis. A pace that is ahead but still within budget is shown in bold label colour, not amber.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Tint Rule",
+        "body": "System blue is the only colour that means \"tappable\". Category colours never mark controls.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dynamic Type Rule",
+        "body": "Every size is in rem off the `-apple-system-body` root. Never hard-code px for text, so the whole scale follows the user's text size setting.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Money Rule",
+        "body": "Every number that can change or line up with another (amounts, totals, counts, axis labels, keypad digits) uses `font-variant-numeric: tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Groups Rule",
+        "body": "Inset groups never get a shadow or border. They separate from the ground by tone alone.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the system tokens for every colour, and give each light value its iOS dark counterpart through `prefers-color-scheme`.",
+      "Do set every text size in rem off `-apple-system-body`, and use tabular numerals for all figures.",
+      "Do build lists as inset groups (12px radius) of rows at least 44px tall, with 0.5px separators inset to the text (16px, or 57px with a 29px tile).",
+      "Do keep the one prominent action as a 50px full-width tint button in the bottom toolbar or a sheet.",
+      "Do show overspend as a solid red bar plus a hatched excess segment, and near-budget as an amber fill.",
+      "Do move things with the iOS sheet curve, and drop to instant transitions under reduced motion."
+    ],
+    "donts": [
+      "Don't use amber or red for anything except budget state, plus red for iOS destructive actions and errors. Never use them as a category colour or for emphasis.",
+      "Don't use any colour other than system blue for tappable controls.",
+      "Don't put shadows or borders on inset groups. Shadows are only for sheets, the selected segment and the toast.",
+      "Don't add a custom display face or a second font family. The system face is the identity.",
+      "Don't use system iOS red, orange or yellow as category colours."
+    ]
+  }
+}

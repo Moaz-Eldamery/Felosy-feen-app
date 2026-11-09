@@ -56,6 +56,24 @@
         ],
         "createdAt": "2026-11-09T08:56:29.468Z",
         "reason": "Claude: unchosen throwaway decision-round sketch, not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-09T09:05:18.945Z",
+        "reason": "Claude: unchosen throwaway decision-round sketch, not shipped"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-09T09:05:19.167Z",
+        "reason": "Claude: unchosen throwaway decision-round sketch, not shipped"
       }
     ]
   }
