@@ -627,7 +627,16 @@ function settingsHTML() {
       <div class="nav-right"><button class="bar-btn strong" data-act="settings-done">Done</button></div>
     </header>
     <div class="sheet-body">
-      <h3 class="group-header" style="margin-top:8px">Monthly budgets · EGP</h3>
+      <h3 class="group-header" style="margin-top:8px">Appearance</h3>
+      <ul class="group">
+        <li><div class="row"><span class="row-label" id="theme-label">Theme</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="theme-label" id="theme-seg">
+            ${THEMES.map((t) => `<button role="radio" data-act="theme" data-theme-pref="${t.id}" aria-checked="${themePref() === t.id}">${t.label}</button>`).join('')}
+          </div></div></li>
+      </ul>
+      <p class="group-footer">System follows your iPhone’s Light/Dark setting.</p>
+
+      <h3 class="group-header">Monthly budgets · EGP</h3>
       <ul class="group">
         ${CATEGORIES.map((c) => `<li><label class="row has-tile">
           <span class="tile t-${c.color}">${icon(c.icon)}</span>
@@ -662,6 +671,30 @@ function settingsHTML() {
       <p class="group-footer">Your payments live in your own Cloudflare database. Forgetting the key doesn’t delete anything.</p>
     </div>`;
 }
+
+// ---------- appearance ----------
+
+const THEMES = [{ id: 'system', label: 'System' }, { id: 'light', label: 'Light' }, { id: 'dark', label: 'Dark' }];
+const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+function themePref() {
+  try { return localStorage.getItem('spending.theme') || 'system'; } catch { return 'system'; }
+}
+
+/** Mirrors the inline script in index.html: sets data-theme and paints the status bar the app's ground colour. */
+function applyTheme(pref = themePref()) {
+  const dark = pref === 'dark' || (pref === 'system' && darkQuery.matches);
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#000000' : '#F2F2F7');
+}
+
+function setTheme(pref) {
+  try { localStorage.setItem('spending.theme', pref); } catch { /* ignore */ }
+  applyTheme(pref);
+  for (const b of document.querySelectorAll('#theme-seg button')) b.setAttribute('aria-checked', String(b.dataset.themePref === pref));
+}
+
+darkQuery.addEventListener?.('change', () => { if (themePref() === 'system') applyTheme(); });
 
 function syncRowHTML() {
   const state = store.pending ? `${plural(store.pending, 'change')} waiting to sync` : store.online ? 'All changes saved' : 'Offline';
@@ -785,6 +818,7 @@ document.addEventListener('click', (e) => {
     case 'sort-edit': openPaySheet({ mode: 'edit', id: f.id }, { keepOpen: true }); break;
     case 'add-instead': openPaySheet({ mode: 'add' }, { keepOpen: true }); break;
     case 'settings-done': settingsDone(); break;
+    case 'theme': setTheme(t.dataset.themePref); break;
     case 'copy': {
       const text = 'copyKey' in t.dataset ? store.key : t.dataset.copy;
       navigator.clipboard?.writeText(text).then(() => toast('Copied'), () => toast('Couldn’t copy. Select it manually.', { error: true }));

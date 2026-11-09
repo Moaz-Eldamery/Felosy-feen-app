@@ -1,7 +1,7 @@
 /* Spending — iOS-standard PWA. Light/dark follow the system; type follows Dynamic Type. */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --bg: #F2F2F7;
   --group: #FFFFFF;
   --sheet: #F2F2F7;
@@ -17,7 +17,6 @@
   --tint: #007AFF;
   --tint-press: #0062CC;
   --on-tint: #FFFFFF;
-  --stage-back: #000000;
 
   /* Status colours: amber = near budget, red = over. Used for nothing else. */
   --amber: #FF9500;
@@ -44,12 +43,13 @@
   --gutter: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+/* Dark: data-theme is set before first paint from Settings › Appearance (System follows iOS). */
+:root[data-theme="dark"] {
+  color-scheme: dark;
     --bg: #000000;
     --group: #1C1C1E;
-    --sheet: #1C1C1E;
-    --sheet-group: #2C2C2E;
+    --sheet: #000000;
+    --sheet-group: #1C1C1E;
     --label: #FFFFFF;
     --label-2: #AEAEB2;
     --label-3: #8E8E93;
@@ -60,7 +60,6 @@
     --material: rgba(22, 22, 24, 0.82);
     --tint: #0A84FF;
     --tint-press: #409CFF;
-    --stage-back: #000000;
     --amber: #FF9F0A;
     --amber-text: #FFB340;
     --amber-bg: rgba(255, 159, 10, 0.18);
@@ -75,7 +74,6 @@
     --c-blue: #0A84FF;
     --c-pink: #FF375F;
     --c-gray: #98989D;
-  }
 }
 
 /* ---------- base ---------- */
@@ -92,7 +90,7 @@ html {
 }
 body {
   margin: 0;
-  background: var(--stage-back);
+  background: var(--bg);
   color: var(--label);
   line-height: 1.29;
   overscroll-behavior: none;
@@ -116,14 +114,8 @@ input { caret-color: var(--tint); }
 .stage {
   position: fixed; inset: 0;
   background: var(--bg);
-  transition: transform 0.5s var(--ease), border-radius 0.5s var(--ease), filter 0.5s var(--ease);
   transform-origin: 50% 0;
   overflow: hidden;
-}
-.sheet-open .stage {
-  transform: translateY(calc(var(--safe-t) + 4px)) scale(0.93);
-  border-radius: 12px;
-  filter: brightness(0.9);
 }
 .screen {
   position: absolute; inset: 0;
@@ -402,13 +394,12 @@ button.row:active, a.row:active { background: var(--fill); }
 .sheet {
   position: fixed; z-index: 11;
   left: 0; right: 0; bottom: 0;
-  top: calc(var(--safe-t) + 12px);
+  top: 0;
+  padding-top: var(--safe-t); /* the sheet owns the status-bar area: one colour edge to edge */
   background: var(--sheet);
-  border-radius: 12px 12px 0 0;
   display: flex; flex-direction: column;
   transform: translateY(105%);
   transition: transform 0.5s var(--ease);
-  box-shadow: 0 -2px 24px rgba(0, 0, 0, 0.12);
   max-width: 600px; margin: 0 auto;
 }
 .sheet-open .sheet { transform: translateY(var(--drag, 0px)); }
@@ -610,7 +601,6 @@ button.row:active, a.row:active { background: var(--fill); }
 
 @media (prefers-reduced-motion: reduce) {
   .stage, .screen, .sheet, .scrim, .toast, .action-sheet, .meter > span { transition-duration: 0.01s !important; }
-  .sheet-open .stage { transform: none; border-radius: 0; }
   .amount-value .caret { animation: none; }
 }
 

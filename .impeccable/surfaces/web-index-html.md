@@ -31,4 +31,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Signature interaction
 
-The app opens with the Add payment sheet up. It has a custom keypad, so no system keyboard is needed for the amount. In unsorted mode, a single category tap files the payment, then shows an undo toast and moves to the next one. Motion uses the iOS sheet spring: the sheet slides up from the bottom, and the main screen behind it scales to 0.94 and darkens.
+The app opens with the Add payment sheet up. It has a custom keypad, so no system keyboard is needed for the amount. In unsorted mode, a single category tap files the payment, then shows an undo toast and moves to the next one. Motion uses the iOS sheet curve: the sheet slides up from the bottom and covers the full screen in the app's ground colour, so the screen is one colour edge to edge (owner request, 2026-11-09).

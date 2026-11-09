@@ -7,8 +7,17 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Spending">
-  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F2F2F7">
+  <script>
+    // Apply Settings › Appearance before first paint, and match the status bar to the app's ground.
+    (function () {
+      var pref = 'system';
+      try { pref = localStorage.getItem('spending.theme') || 'system'; } catch (e) {}
+      var dark = pref === 'dark' || (pref === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#000000' : '#F2F2F7');
+    })();
+  </script>
   <meta name="format-detection" content="telephone=no">
   <title>Spending</title>
   <link rel="manifest" href="manifest.webmanifest">

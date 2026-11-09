@@ -239,7 +239,7 @@ These are Apple's system colours, used for their system meanings. One tint, a fi
 
 ### Neutral
 - **Grouped Background** (system-grouped-bg): the screen ground, and the sheet ground in light mode.
-- **Group Surface** (group-surface / sheet-group): inset group cards. Inside a sheet in dark mode, groups step up to #2C2C2E.
+- **Group Surface** (group-surface / sheet-group): inset group cards. Sheets use the app ground (#F2F2F7 / #000) with the same group colours as the main screen.
 - **Label / Secondary Label / Tertiary Label**: primary text; then supporting text, section headers, axis labels and the currency prefix; then placeholders, chevrons, the pace line and disabled text. Secondary label is darkened from the iOS default (#6C6C70) so it reaches 4.5:1 on both grounds.
 - **Separator** (separator): 0.5px hairlines between rows and under the bar material.
 - **Fill / Fill Strong**: meter tracks, pressed rows, segmented and date-field wells, tags, the grabber, pressed keys and the disabled primary button.
@@ -283,7 +283,6 @@ The layout is a single phone column. Screens are full-height flex columns: navba
 Depth comes from tonal layering, as on iOS: the grey ground, white groups on it, and sheets above both. There are no card shadows. The few shadows mark real stacking: a sheet over the stage, the selected segment lifting off its well, and a floating toast. Bar material uses translucent blur, not shadow, and is separated from content by a 0.5px separator drawn as a box-shadow.
 
 ### Shadow Vocabulary
-- **Sheet lift** (`box-shadow: 0 -2px 24px rgba(0, 0, 0, 0.12)`): the presented sheet over the scaled stage.
 - **Segment thumb** (`box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04)`): the selected segment in a segmented control.
 - **Toast float** (`box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18)`): the toast.
 - **Bar hairline** (`box-shadow: 0 0.5px 0 var(--sep)`, or `0 -0.5px 0` on the toolbar): the scrolled navbar and the toolbar edge.
@@ -333,7 +332,7 @@ A 4px track in fill colour. The fill is the category colour under 80%, amber fro
 Sits in a group card. It shows the cumulative spend as a 2.5px tint line over a 14% tint area fill, against a 1.5px dashed tertiary-label "on track" line. Hairline gridlines and a today rule run through it, and an 11px tint dot marks today, ringed in the group colour. Caption-size tabular labels sit on the right y-axis and the x-axis. Below is a legend with line swatches.
 
 ### Sheet
-Rises from the bottom over 0.5s on `cubic-bezier(0.32, 0.72, 0, 1)`. It has a 36×5px grabber, a 12px top radius and starts 12px below the safe area. Behind it, the stage scales to 0.93, gets a 12px radius and dims to brightness 0.9 under a 20% black scrim. It can be dragged down to dismiss. The header is a three-column grid with a centred 1rem/600 title.
+Rises from the bottom over 0.5s on `cubic-bezier(0.32, 0.72, 0, 1)`. It covers the full screen, status-bar area included (padding-top is the safe-area inset), in the app's own ground colour, so the screen is one colour edge to edge; it keeps a 36×5px grabber. The stage behind it does not scale or dim. It can be dragged down to dismiss. The header is a three-column grid with a centred 1rem/600 title.
 
 ### Custom Keypad
 A 3-column grid of 50px keys with a 12px radius. Digits are 1.647rem/400, tabular. Keys have no background at rest and show the strong fill when pressed. Backspace is an icon key. Because the keypad replaces the system keyboard for the amount, the amount shows a blinking 3px tint caret.
@@ -351,7 +350,7 @@ A dark translucent pill (26px radius) with blur, white 0.882rem/500 text and a c
 Two stacked groups, inset 8px from the screen edges, with a 14px radius. The top group is bar material with a 30px blur and holds a footnote title and 57px tint actions separated by hairlines. The bottom group is a separate Cancel at weight 600 on group surface. It rises over 0.4s on the iOS curve above a 30% scrim.
 
 ### Motion
-The iOS sheet curve (`cubic-bezier(0.32, 0.72, 0, 1)`) drives every spatial move. Sheets and the stage take 0.5s, screens 0.42s, the action sheet 0.4s, meter fills 0.6s, and presses 0.12–0.2s. With `prefers-reduced-motion`, transitions collapse to 0.01s, the stage no longer scales behind sheets, and the caret stops blinking.
+The iOS sheet curve (`cubic-bezier(0.32, 0.72, 0, 1)`) drives every spatial move. Sheets and the stage take 0.5s, screens 0.42s, the action sheet 0.4s, meter fills 0.6s, and presses 0.12–0.2s. With `prefers-reduced-motion`, transitions collapse to 0.01s, the caret stops blinking.
 
 ## Do's and Don'ts
 
@@ -369,3 +368,8 @@ The iOS sheet curve (`cubic-bezier(0.32, 0.72, 0, 1)`) drives every spatial move
 - **Don't** put shadows or borders on inset groups. Shadows are only for sheets, the selected segment and the toast.
 - **Don't** add a custom display face or a second font family. The system face is the identity.
 - **Don't** use system iOS red, orange or yellow as category colours.
+
+
+## Appearance
+
+Settings › Appearance offers System / Light / Dark (stored in `localStorage` as `spending.theme`). An inline script in `index.html` resolves it before first paint and sets `data-theme="light|dark"` on `<html>`; every dark token lives under `:root[data-theme="dark"]`. The `theme-color` meta is kept equal to the ground (#F2F2F7 / #000) so the iOS status bar matches the app. System follows `prefers-color-scheme` live.
