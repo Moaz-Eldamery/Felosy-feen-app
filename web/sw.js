@@ -1,6 +1,6 @@
 // App-shell cache so the app opens instantly and offline. API calls are never cached here;
 // the app keeps its own data cache and outbox in localStorage.
-const VERSION = 'spending-v1';
+const VERSION = 'spending-v2';
 const SHELL = [
   './', 'index.html', 'styles.css', 'manifest.webmanifest',
   'js/app.js', 'js/model.js', 'js/store.js', 'js/icons.js',

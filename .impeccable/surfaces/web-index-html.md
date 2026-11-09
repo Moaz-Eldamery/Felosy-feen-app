@@ -19,7 +19,7 @@ STORY: Open the app, and the Add payment sheet is already up with unsorted Apple
 
 FIRST VIEWPORT: Main screen at 390pt wide:
 - navigation bar with History (left) and Settings (right)
-- warning rows directly under it
+- warning rows directly under the large title (iOS HIG: top-level screens lead with the large title)
 - a large title with the month name, then the total in a 44pt bold numeral with "of 8,300 · 21 days left"
 - an inset card holding the pace chart (cumulative line, dotted on-track line, today dot)
 - inset grouped list of 8 categories with thin meters

@@ -263,8 +263,11 @@ button.row:active, a.row:active { background: var(--fill); }
   transition: width 0.6s var(--ease);
 }
 .meter.near > span { background: var(--amber); }
-.meter.over > span {
-  background: repeating-linear-gradient(-45deg, var(--red) 0 4px, color-mix(in srgb, var(--red) 55%, transparent) 4px 7px);
+.meter.over { display: flex; gap: 2px; overflow: visible; background: none; }
+.meter.over > span { background: var(--red); flex: none; }
+.meter.over > .excess {
+  flex: 1; min-width: 8px;
+  background: repeating-linear-gradient(-45deg, var(--red) 0 3px, color-mix(in srgb, var(--red) 30%, transparent) 3px 6px);
 }
 .v-over { color: var(--red-text); font-weight: 600; }
 .v-near { color: var(--amber-text); font-weight: 600; }
@@ -290,7 +293,7 @@ button.row:active, a.row:active { background: var(--fill); }
 .chart-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .chart-title { font-size: 1rem; font-weight: 600; margin: 0; }
 .chart-status { font-size: 0.882rem; color: var(--label-2); text-align: right; }
-.chart-status.ahead { color: var(--amber-text); font-weight: 600; }
+.chart-status.ahead { color: var(--label); font-weight: 600; } /* amber/red stay reserved for budget states */
 .chart-status.over { color: var(--red-text); font-weight: 600; }
 .chart {
   position: relative;
@@ -529,8 +532,9 @@ button.row:active, a.row:active { background: var(--fill); }
 .sort-meta { text-align: center; margin: -8px 0 18px; }
 .sort-merchant { font-size: 1.176rem; font-weight: 600; margin: 0; }
 .sort-when { font-size: 0.882rem; color: var(--label-2); margin: 2px 0 0; }
-.sort-prompt { font-size: 0.882rem; color: var(--label-2); text-align: center; margin: 0 0 10px; }
-.sort-actions { display: flex; justify-content: space-between; margin-top: auto; padding-top: 16px; }
+/* Discs and actions sit in the bottom half, within thumb reach. */
+.sort-prompt { font-size: 0.882rem; color: var(--label-2); text-align: center; margin: auto 0 10px; padding-top: 24px; }
+.sort-actions { display: flex; justify-content: space-between; padding-top: 12px; }
 
 /* settings */
 .budget-input {
@@ -587,6 +591,8 @@ button.row:active, a.row:active { background: var(--fill); }
 /* Over a sheet, the bottom belongs to the confirm button and keypad: drop in from the top. */
 .sheet-open .toast { bottom: auto; top: calc(var(--safe-t) + 64px); transform: translateY(-20px); }
 .sheet-open .toast.show { transform: none; }
+/* Sorting: the next payment's amount is at the top, so use the empty band above the discs. */
+.sheet-open.sorting .toast { top: 40%; }
 .toast .toast-action { color: #64D2FF; font-weight: 600; min-height: 36px; padding: 0 10px; border-radius: 18px; }
 .toast .toast-action:active { background: rgba(255, 255, 255, 0.12); }
 .toast.error { background: rgba(160, 20, 20, 0.95); }
@@ -612,7 +618,9 @@ button.row:active, a.row:active { background: var(--fill); }
 @media (min-width: 640px) {
   .scroll, .toolbar > * { max-width: 600px; margin-left: auto; margin-right: auto; width: 100%; }
   .toolbar { padding-left: 0; padding-right: 0; }
+  .navbar { padding-left: max(8px, calc((100% - 600px) / 2)); padding-right: max(8px, calc((100% - 600px) / 2)); }
 }
+.chart .xlab.first { transform: none; }
 
 .cat-row .row-title { white-space: normal; overflow: visible; line-height: 1.2; }
 .sheet-body > * { flex-shrink: 0; }

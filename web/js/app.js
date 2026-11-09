@@ -134,7 +134,6 @@ function renderHome() {
     <p class="title-sub">${sub}</p>
     ${alertsHTML(sum)}
     <div class="total-block">
-      <p class="total-label">Spent this month</p>
       <p class="total"><span class="cur">EGP</span>${money(sum.total, { exact: true })}</p>
       <p class="total-sub">${budgetLineHTML(sum)}</p>
     </div>
@@ -146,10 +145,10 @@ function renderHome() {
 }
 
 function budgetLineHTML(sum) {
-  if (!sum.budgetTotal) return 'No budgets set yet · <button class="btn-plain" style="min-height:0;display:inline" data-act="open-settings">Set budgets</button>';
+  if (!sum.budgetTotal) return 'spent · No budgets set yet · <button class="btn-plain" style="min-height:0;display:inline" data-act="open-settings">Set budgets</button>';
   const left = round2(sum.budgetTotal - sum.total);
-  if (left < 0) return `<span class="v-over">${egp(-left)} over</span> your ${egp(sum.budgetTotal)} budget`;
-  return `of ${egp(sum.budgetTotal)} budget · <b>${egp(left)} left</b>`;
+  if (left < 0) return `spent · <span class="v-over">${egp(-left)} over</span> your ${egp(sum.budgetTotal)} budget`;
+  return `spent of ${egp(sum.budgetTotal)} · <b>${egp(left)} left</b>`;
 }
 
 function alertsHTML(sum) {
@@ -182,9 +181,10 @@ function catRowHTML(r) {
   const value = r.budget
     ? `<b class="${cls}" style="font-weight:${cls ? 600 : 500}">${money(r.spent)}</b> <span class="of">/ ${money(r.budget)}</span>`
     : `<span style="font-weight:500">${money(r.spent)}</span> <span class="of">· No limit</span>`;
-  const width = r.budget ? Math.min(100, (r.spent / r.budget) * 100) : 0;
+  // Over budget: solid up to the budget mark, hatched for the overshoot (scaled to the overage).
+  const width = r.budget ? (r.state === 'over' ? (r.budget / r.spent) * 100 : (r.spent / r.budget) * 100) : 0;
   const meter = r.budget
-    ? `<span class="meter ${r.state}" style="--tile:var(--c-${r.color})" role="progressbar" aria-label="${esc(r.label)} budget used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round((r.spent / r.budget) * 100)}"><span style="width:${width}%"></span></span>`
+    ? `<span class="meter ${r.state}" style="--tile:var(--c-${r.color})" role="progressbar" aria-label="${esc(r.label)} budget used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round((r.spent / r.budget) * 100)}"><span style="width:${width}%"></span>${r.state === 'over' ? '<span class="excess"></span>' : ''}</span>`
     : '';
   return `<li><button class="row has-tile cat-row" data-act="filter" data-cat="${r.id}">
     <span class="tile t-${r.color}">${icon(r.icon)}</span>
@@ -236,7 +236,7 @@ function chartHTML(sum) {
       </svg>
       ${dot}
       ${ticks.map((t) => `<span class="ylab" style="top:${y(t)}%">${compact(t)}</span>`).join('')}
-      ${xTicks.map((d) => `<span class="xlab" style="left:${x(d - 1)}%">${d === 1 ? monthLabel(sum.month, { year: false }).slice(0, 3) + ' 1' : d}</span>`).join('')}
+      ${xTicks.map((d) => `<span class="xlab${d === 1 ? ' first' : ''}" style="left:${x(d - 1)}%">${d === 1 ? monthLabel(sum.month, { year: false }).slice(0, 3) + ' 1' : d}</span>`).join('')}
     </div>
     <div class="chart-legend"><span><i></i>You</span>${budgetTotal ? '<span><i class="dash"></i>On track for budget</span>' : ''}</div>
   </section>`;
@@ -280,13 +280,11 @@ function renderHistory() {
 
   const sel = ui.filter !== 'all' ? sum.rows.find((r) => r.id === ui.filter) : null;
   const summary = sel
-    ? `<p class="total-label">${esc(sel.label)}</p>
-       <p class="total"><span class="cur">EGP</span>${money(sel.spent, { exact: true })}</p>
-       <p class="total-sub">${sel.budget
-        ? (sel.state === 'over' ? `<span class="v-over">${egp(sel.over)} over</span> its ${egp(sel.budget)} budget` : `of ${egp(sel.budget)} budget · <b>${egp(sel.budget - sel.spent)} left</b>`)
-        : 'No budget limit'}</p>`
-    : `<p class="total-label">${sum.isCurrent ? 'Spent so far' : 'Spent in total'}</p>
-       <p class="total"><span class="cur">EGP</span>${money(sum.total, { exact: true })}</p>
+    ? `<p class="total"><span class="cur">EGP</span>${money(sel.spent, { exact: true })}</p>
+       <p class="total-sub">spent on ${esc(sel.label)} · ${sel.budget
+        ? (sel.state === 'over' ? `<span class="v-over">${egp(sel.over)} over</span> its ${egp(sel.budget)} budget` : `of ${egp(sel.budget)} · <b>${egp(sel.budget - sel.spent)} left</b>`)
+        : 'no budget limit'}</p>`
+    : `<p class="total"><span class="cur">EGP</span>${money(sum.total, { exact: true })}</p>
        <p class="total-sub">${budgetLineHTML(sum)}</p>`;
 
   $('#history-scroll').innerHTML = `
@@ -415,7 +413,7 @@ function showSheet() {
 }
 
 function closeSheet() {
-  document.body.classList.remove('sheet-open');
+  document.body.classList.remove('sheet-open', 'sorting');
   $('#stage').inert = false;
   ui.sheet = null;
 }
@@ -431,6 +429,7 @@ function renderSheet() {
   const f = ui.sheet;
   const el = $('#sheet');
   if (!f) return;
+  document.body.classList.toggle('sorting', f.kind === 'pay' && f.mode === 'sort');
   if (f.kind === 'settings') { el.innerHTML = settingsHTML(); return; }
   if (f.mode === 'sort') { el.innerHTML = sortHTML(f); return; }
 
