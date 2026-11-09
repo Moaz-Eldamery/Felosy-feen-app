@@ -4,3 +4,4 @@ node_modules/
 .impeccable/review/
 .impeccable/hook.cache.json
 .impeccable/.chrome-profile/
+.app-key

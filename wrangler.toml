@@ -12,8 +12,7 @@ run_worker_first = ["/api/*"]
 [[d1_databases]]
 binding = "DB"
 database_name = "spending"
-# Replace with the id printed by: npx wrangler d1 create spending
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "50d817a1-3e06-4376-80ea-65b02472129c"
 migrations_dir = "worker/migrations"
 
 # The secret key is NOT stored here. Set it with: npx wrangler secret put APP_KEY
