@@ -1,0 +1,15 @@
+{
+  "name": "spending",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Personal monthly spending tracker — iPhone PWA + Cloudflare Worker/D1",
+  "scripts": {
+    "dev": "wrangler d1 migrations apply spending --local && wrangler dev --ip 0.0.0.0",
+    "db:migrate": "wrangler d1 migrations apply spending --remote",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.0"
+  }
+}

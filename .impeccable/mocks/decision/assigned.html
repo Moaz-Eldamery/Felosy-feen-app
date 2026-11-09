@@ -1,0 +1,56 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=Cairo:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:390px;height:844px;overflow:hidden;background:#E9EAE4;font-family:Barlow,sans-serif;color:#16181B}
+.status{height:47px}
+.warn{margin:0 12px;display:flex;gap:6px}
+.w{flex:1;border-radius:6px;padding:7px 10px;font-size:13px;font-weight:600;display:flex;justify-content:space-between}
+.w.over{background:#B3261E;color:#fff}
+.w.near{background:#F0B429;color:#2A1E00}
+.head{padding:14px 18px 6px;display:flex;justify-content:space-between;align-items:baseline}
+.month{font-size:15px;font-weight:600}
+.hist{font-size:15px;color:#3F5F7A;font-weight:600}
+.total{margin:0 12px;background:#F7F8F4;border-radius:10px;border:1.5px solid #16181B;overflow:hidden}
+.total .band{background:#16181B;color:#F7F8F4;display:flex;justify-content:space-between;padding:4px 12px;font-family:'Barlow Condensed';font-weight:600;font-size:14px;letter-spacing:.06em}
+.total .band span:last-child{font-family:Cairo;letter-spacing:0}
+.tbody{padding:8px 14px 10px}
+.num{font-family:'Barlow Condensed';font-weight:700;font-size:64px;line-height:.95;letter-spacing:-.01em}
+.num small{font-size:22px;font-weight:600;margin-right:4px}
+.of{font-size:14px;color:#4A4E54;margin-top:2px}
+svg{display:block;margin-top:8px}
+.grid{margin:10px 12px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.p{background:#F7F8F4;border:1.5px solid #16181B;border-radius:8px;overflow:hidden}
+.p .b{padding:3px 8px;display:flex;justify-content:space-between;font-family:'Barlow Condensed';font-weight:600;font-size:13px;letter-spacing:.05em;color:#fff}
+.p .b i{font-style:normal;font-family:Cairo;font-size:12px;letter-spacing:0}
+.p .v{padding:4px 9px 7px;font-family:'Barlow Condensed';font-weight:700;font-size:28px;line-height:1}
+.p .v span{font-size:13px;font-weight:500;color:#4A4E54;font-family:Barlow;margin-left:3px}
+.m{height:5px;margin:0 9px 8px;background:#DADCD4;border-radius:3px;position:relative}
+.m b{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#16181B}
+.m.ov{background:repeating-linear-gradient(135deg,#B3261E 0 3px,#F7F8F4 3px 6px)}
+.add{position:absolute;left:12px;right:12px;bottom:28px;height:58px;border-radius:14px;background:#16181B;color:#F7F8F4;font-family:'Barlow Condensed';font-weight:700;font-size:24px;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:10px}
+</style></head><body>
+<div class="status"></div>
+<div class="warn"><div class="w over"><span>Computer acc.</span><span>+200 over</span></div><div class="w near"><span>Food</span><span>81%</span></div></div>
+<div class="head"><span class="month">November 2026 · day 9 of 30</span><span class="hist">History</span></div>
+<div class="total">
+ <div class="band"><span>THIS MONTH · EGP</span><span>الشهر</span></div>
+ <div class="tbody">
+  <div class="num"><small>EGP</small>6,320</div>
+  <div class="of">of 8,300 budgeted · on-track pace today 2,490 ahead</div>
+  <svg width="334" height="78" viewBox="0 0 334 78"><line x1="0" y1="76" x2="334" y2="4" stroke="#8A8E94" stroke-dasharray="3 4" stroke-width="1.5"/><polyline points="0,76 11,70 22,66 33,52 44,49 56,40 67,30 78,26 89,22 100,15" fill="none" stroke="#16181B" stroke-width="2.5"/><circle cx="100" cy="15" r="4" fill="#16181B"/></svg>
+ </div>
+</div>
+<div class="grid">
+ <div class="p"><div class="b" style="background:#4E9BD1"><span>FOOD &amp; DRINKS</span><i>أكل</i></div><div class="v">2,850<span>/ 3,500</span></div><div class="m"><b style="width:81%;background:#F0B429"></b></div></div>
+ <div class="p"><div class="b" style="background:#2F8F9B"><span>WATER</span><i>مياه</i></div><div class="v">140<span>/ 300</span></div><div class="m"><b style="width:47%"></b></div></div>
+ <div class="p"><div class="b" style="background:#5A5F8C"><span>COMPUTER ACC.</span><i>كمبيوتر</i></div><div class="v">1,200<span>/ 1,000</span></div><div class="m ov"></div></div>
+ <div class="p"><div class="b" style="background:#9C5B8E"><span>CLOTHES</span><i>لبس</i></div><div class="v">0<span>/ 800</span></div><div class="m"><b style="width:0"></b></div></div>
+ <div class="p"><div class="b" style="background:#7E7466"><span>BILLS</span><i>فواتير</i></div><div class="v">900<span>/ 1,200</span></div><div class="m"><b style="width:75%"></b></div></div>
+ <div class="p"><div class="b" style="background:#E37A2C"><span>TRANSPORT</span><i>مواصلات</i></div><div class="v">760<span>/ 1,500</span></div><div class="m"><b style="width:51%"></b></div></div>
+ <div class="p"><div class="b" style="background:#2F8F6B"><span>GIFTS</span><i>هدايا</i></div><div class="v">350<span>no limit</span></div><div class="m"></div></div>
+ <div class="p"><div class="b" style="background:#6B6F75"><span>OTHERS</span><i>أخرى</i></div><div class="v">120<span>no limit</span></div><div class="m"></div></div>
+</div>
+<div class="add">+ ADD PAYMENT</div>
+</body></html>

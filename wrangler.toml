@@ -1,0 +1,20 @@
+name = "spending"
+main = "worker/src/index.js"
+compatibility_date = "2025-09-01"
+
+# The PWA in /web is served as static assets; /api/* falls through to the Worker.
+[assets]
+directory = "./web"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "spending"
+# Replace with the id printed by: npx wrangler d1 create spending
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "worker/migrations"
+
+# The secret key is NOT stored here. Set it with: npx wrangler secret put APP_KEY
+# For local development it lives in .dev.vars (gitignored).
