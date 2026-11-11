@@ -2,7 +2,7 @@
 // Static files in /web are served by Workers Assets; every /api/* request lands here.
 
 export const CATEGORIES = [
-  'food', 'water', 'computer', 'clothes', 'bills', 'transport', 'gifts', 'others',
+  'food', 'water', 'computer', 'clothes', 'bills', 'transport', 'vodafone', 'others',
 ];
 const METHODS = ['cash', 'card', 'applepay'];
 const TZ = 'Africa/Cairo';
@@ -272,7 +272,7 @@ function validatePayment(input, { partial, allowUnsorted }) {
 
 const LABELS = {
   food: 'Food & Drinks', water: 'Water', computer: 'Computer Accessories', clothes: 'Clothes',
-  bills: 'Bills', transport: 'Transportation', gifts: 'Gifts', others: 'Others',
+  bills: 'Bills', transport: 'Transportation', vodafone: 'Vodafone Bills', others: 'Others',
 };
 const METHOD_LABELS = { cash: 'Cash', card: 'Card', applepay: 'Apple Pay' };
 

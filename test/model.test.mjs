@@ -40,14 +40,14 @@ test('summary: totals, warnings, and no-limit categories', () => {
   const p = (amount, category, day) => ({ amount, category, paid_at: `2026-10-${String(day).padStart(2, '0')}T10:00:00Z` });
   const sum = summarize({
     month: '2026-10',
-    payments: [p(900, 'food', 1), p(150.25, 'food', 3), p(1200, 'computer', 4), p(500, 'gifts', 5), p(70, 'water', 31)],
-    budgets: { food: 1300, computer: 1000, water: 300, gifts: null },
+    payments: [p(900, 'food', 1), p(150.25, 'food', 3), p(1200, 'computer', 4), p(500, 'vodafone', 5), p(70, 'water', 31)],
+    budgets: { food: 1300, computer: 1000, water: 300, vodafone: null },
   }, '2026-11');
   assert.equal(sum.total, 2820.25);
   assert.equal(sum.budgetTotal, 2600);
   assert.equal(sum.asOf, 31); // past month: whole month
   assert.equal(sum.cumulative[31], 2820.25);
   assert.deepEqual(sum.alerts.map((a) => [a.id, a.state]), [['computer', 'over'], ['food', 'near']]);
-  assert.equal(sum.rows.find((r) => r.id === 'gifts').state, 'none');
+  assert.equal(sum.rows.find((r) => r.id === 'vodafone').state, 'none');
   assert.equal(sum.rows.find((r) => r.id === 'computer').over, 200);
 });

@@ -9,7 +9,7 @@ export const CATEGORIES = [
   { id: 'clothes', label: 'Clothes', short: 'Clothes', icon: 'clothes', color: 'purple' },
   { id: 'bills', label: 'Bills', short: 'Bills', icon: 'bills', color: 'brown' },
   { id: 'transport', label: 'Transportation', short: 'Transport', icon: 'transport', color: 'blue' },
-  { id: 'gifts', label: 'Gifts', short: 'Gifts', icon: 'gifts', color: 'pink' },
+  { id: 'vodafone', label: 'Vodafone Bills', short: 'Vodafone', icon: 'vodafone', color: 'vodafone' },
   { id: 'others', label: 'Others', short: 'Others', icon: 'others', color: 'gray' },
 ];
 export const CAT = Object.fromEntries(CATEGORIES.map((c) => [c.id, c]));

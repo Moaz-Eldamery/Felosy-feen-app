@@ -235,7 +235,7 @@ These are Apple's system colours, used for their system meanings. One tint, a fi
 - **Over-Budget Red** (red / red-text / red-bg): a category past its budget. Shown as the meter fill and hatch, the warning tile, and the value text. Red-text is also the iOS destructive colour for Delete, "Forget key", input errors, and a pace status that has gone over the total budget.
 
 ### Tertiary
-- **Category Palette** (cat-green, cat-cyan, cat-indigo, cat-purple, cat-brown, cat-blue, cat-pink, cat-gray): one per fixed category. In order: Food & Drinks, Water, Computer Accessories, Clothes, Bills, Transportation, Gifts, Others. Each is used as the fill for a tile, disc, chip swatch or meter, always with white glyphs on top. iOS red, orange and yellow are left out because they belong to budget status.
+- **Category Palette** (cat-green, cat-cyan, cat-indigo, cat-purple, cat-brown, cat-blue, cat-vodafone, cat-gray): one per fixed category. In order: Food & Drinks, Water, Computer Accessories, Clothes, Bills, Transportation, Vodafone Bills, Others. Each is used as the fill for a tile, disc, chip swatch or meter, always with white glyphs on top. iOS red, orange and yellow are left out because they belong to budget status.
 
 ### Neutral
 - **Grouped Background** (system-grouped-bg): the screen ground, and the sheet ground in light mode.

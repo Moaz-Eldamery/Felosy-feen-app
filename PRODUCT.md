@@ -36,7 +36,7 @@ Built for one person's habits and nothing else. There are no bank links and no a
 
 ## Capabilities and Constraints
 
-**Categories (fixed list of 8):** Food & Drinks, Water, Computer Accessories, Clothes, Bills, Transportation, Gifts, Others.
+**Categories (fixed list of 8):** Food & Drinks, Water, Computer Accessories, Clothes, Bills, Transportation, Vodafone Bills, Others.
 
 **Currency:** EGP only.
 
